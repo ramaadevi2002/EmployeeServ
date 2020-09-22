@@ -1,0 +1,88 @@
+{
+  "title": "Employee resource",
+  "description": "Employee resource object",
+  "type": "object",
+  "properties": {
+    "id": {
+      "description": "employee id",
+      "type": "integer"
+    },
+    "first_name": {
+      "description": "first name",
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 255
+    },
+    "last_name": {
+      "description": "last name",
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 255
+    },
+    "dob" :  {
+      "year": 2012,
+      "month": 4,
+      "day": 23,
+      "hour": 18,
+      "minute": 25,
+      "second": 43,
+      "timeZone": "America/New_York"
+    },
+    "Address" : {
+       "line1" :{
+         "description": "line1",
+         "type": "string",
+         "minLength": 1,
+         "maxLength": 255
+
+       },
+      "line2" :{
+        "description": "line2",
+        "type": "string",
+        "minLength": 1,
+        "maxLength": 255
+
+      },
+      "city" :{
+        "description": "city",
+        "type": "string",
+        "minLength": 1,
+        "maxLength": 255
+
+      },
+      "State" :{
+        "description": "State",
+        "type": "string",
+        "minLength": 1,
+        "maxLength": 255
+
+      },
+      "Country" :{
+        "description": "Country",
+        "type": "string",
+        "minLength": 1,
+        "maxLength": 255
+
+      },
+      "Zipcode" :{
+        "description": "Zipcode",
+        "type": "Integer",
+        "minLength": 5,
+        "maxLength": 5
+
+      },
+      "required": [
+        "line1",
+        "city",
+        "State",
+        "Country",
+        "Zipcode"
+      ]
+
+    }
+  },
+  "required": [
+    "first_name",
+    "last_name"
+  ]
+}
