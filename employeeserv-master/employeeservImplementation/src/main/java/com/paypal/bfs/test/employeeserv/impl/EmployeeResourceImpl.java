@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.beans.factory.annotation.Autowired;
 import com.paypal.bfs.test.employeeserv.DAO.EmployeeDAO;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
-import com.paypal.bfs.test.employeeserv.exception.ResourceNotFoundException;
+import com.paypal.bfs.test.employeeserv.exception.RecordNotFoundException;
 import java.net.URI;
 /**
  * Implementation class for employee resource.
@@ -24,7 +24,7 @@ public class EmployeeResourceImpl implements EmployeeResource {
 
         Integer longId= new Integer(id);
         Employee employee = employeeDao.findById(longId)
-                .orElseThrow(() -> new ResourceNotFoundException("Employee not found for this id :: " + id));
+                .orElseThrow(() -> new RecordNotFoundException("Employee not found for this id :: " + id));
 
         return new ResponseEntity<>(employee, HttpStatus.OK);
     }
